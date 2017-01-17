@@ -11,7 +11,8 @@ module.exports = {
         root: __dirname,
         alias: {
             Table: 'src/components/container/Table.jsx',
-            AddRecipe: 'src/components/presentational/AddRecipe.jsx'
+            AddRecipe: 'src/components/presentational/AddRecipe.jsx',
+            RecipeList: 'src/components/presentational/RecipeList.jsx'
         },
         extensions: ['', '.js', '.jsx']
     },

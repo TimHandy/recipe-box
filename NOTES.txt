@@ -14,9 +14,12 @@ AddRecipe component
     'Add Recipe' button
     'Close' button
 
-User Story: add recipe should be a modal
 
 User Story: I can retrieve the data from local storage
+
+
+User Story: add recipe should be a modal
+
 
 on first load
     if localstorage get localstorage and update state with it 
