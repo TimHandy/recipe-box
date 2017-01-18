@@ -1,7 +1,3 @@
-/*
-This file renders an input text box and updates the state on the parent component defined in app.jsx on every keypress
-*/
-
 'use strict'
 
 import React from 'react'
@@ -45,9 +41,8 @@ class AddRecipe extends React.Component {
                         <div>
                             <h2>Add Recipe</h2>
                             <p>Recipe name</p><input id='name' value={this.props.recipe.name} onChange={this.props.handleChange} placeholder='Recipe name'/>
-                            <p>Recipe ingredients</p><textarea id='ingredients' value={this.props.recipe.ingredients} onChange={this.props.handleChange} placeholder='Recipe ingredients'/><br/>
+                            <p>Recipe ingredients</p><textarea id='ingredients' value={this.props.recipe.ingredients} onChange={this.props.handleChange} placeholder='Enter ingredients separated by commas'/><br/>
                             <button className='btn btn-primary' onClick={this.props.submitRecipe}>Add Recipe</button>
-                            <button className='btn btn-default'>Close</button>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>

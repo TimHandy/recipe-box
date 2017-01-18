@@ -44,10 +44,11 @@ class App extends React.Component {
 
     submitRecipe = () => {
         const name = this.state.name
-        const ingredients = this.state.ingredients
+        const ingredientsAry = this.state.ingredients.split(',')
+        console.log(ingredientsAry);
         const newRecipe = {
             name: name,
-            ingredients: ingredients
+            ingredients: ingredientsAry
         }
         // console.log(JSON.stringify(newRecipe, null, 2))
         // console.log(JSON.stringify(this.state.store, null, 2))

@@ -1,4 +1,15 @@
 
+User Story: I can click into any of those recipes to view it.
+
+User Story: I can edit these recipes.
+
+User Story: I can delete these recipes.
+
+User Story: All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
+
+------------------------------------------------------------
+DONE:
+
 User Story: I can create recipes that have names and ingredients.
 
 Recipe component
@@ -13,7 +24,6 @@ AddRecipe component
     Ingredients input
     'Add Recipe' button
     'Close' button
-
 
 User Story: I can retrieve the data from local storage
 
@@ -37,19 +47,4 @@ Add Recipe button update state, and trigger adding recipe to localStorage:
 
 app.jsx render AddRecipe
 
-
-
-
 User Story: I can see an index view where the names of all the recipes are visible.
-
-IndexComponent
-    list of components
-    'Add recipe' button
-
-User Story: I can click into any of those recipes to view it.
-
-User Story: I can edit these recipes.
-
-User Story: I can delete these recipes.
-
-User Story: All new recipes I add are saved in my browser's local storage. If I refresh the page, these recipes will still be there.
