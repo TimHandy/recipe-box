@@ -97,6 +97,13 @@ a {
     }
 }
 
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
 /* small screens */
 @media only screen and (max-width : 900px) {
     .column {
