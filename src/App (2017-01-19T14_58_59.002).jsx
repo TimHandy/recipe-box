@@ -11,9 +11,9 @@ class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            store: [], //[{name:'', ingredients:[]}],
+            store: [{name:'', ingredients:[]}],
             name: '',
-            ingredients: ''
+            ingredients: '',
         }
     }
 
@@ -41,9 +41,7 @@ class App extends React.Component {
         //console.log('saved to localStorage')
         // TODO: add error handling, like pass back a return val and throw an error if unable to save
     }
-    // counter = () => {
-    //     let vl = 0
-    //     return val+1}
+
     submitRecipe = () => {
         const name = this.state.name
         const ingredientsAry = this.state.ingredients.split(',')
@@ -51,12 +49,13 @@ class App extends React.Component {
             name: name,
             ingredients: ingredientsAry
         }
-
+        const counter = 0
+        const counter =+1
         if(name !== '' && ingredientsAry !== []) {
             this.setState({
-                // if(counter() === 1) {
-                //     this.state.store.splice(0,1)
-                // }
+                if(counter === 0) {
+                    this.state.store.splice(0,1)
+                }
                 store: this.state.store.concat(newRecipe)
             }, function() {
                 this.saveData(this.state.store)

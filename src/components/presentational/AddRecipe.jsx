@@ -39,7 +39,6 @@ class AddRecipe extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
                         <div>
-                            <h2>Add Recipe</h2>
                             <p>Recipe name</p><input id='name' value={this.props.recipe.name} onChange={this.props.handleChange} placeholder='Recipe name'/>
                             <p>Recipe ingredients</p><textarea id='ingredients' value={this.props.recipe.ingredients} onChange={this.props.handleChange} placeholder='Enter ingredients separated by commas'/><br/>
                             <button className='btn btn-primary' onClick={this.props.submitRecipe}>Add Recipe</button>
