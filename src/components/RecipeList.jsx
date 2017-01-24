@@ -29,9 +29,7 @@ class RecipeList extends React.Component {
   }
 
   handleEdit = () => {
-    this
-      .props
-      .editRecipe(this.state.editIdx)
+    this.props.editRecipe(this.state.editIdx)
     this.close()
   }
 
@@ -40,7 +38,12 @@ class RecipeList extends React.Component {
   }
 
   open = (idx) => {
-    this.setState({showModal: true, editIdx: idx})
+    this.setState({
+      showModal: true, 
+      editIdx: idx, 
+      name: this.props.recipe[idx].name,
+      ingredients: this.props.recipe[idx].ingredients
+    })
   }
 
   store = (name, ingredients) => {
@@ -61,7 +64,7 @@ class RecipeList extends React.Component {
           <Panel
             collapsible
             eventKey={idx}
-            key={idx}
+            key={ idx + recipe.ingredients[0] + recipe.name}
             header={recipe.name}>
             <h3 className="text-center">Ingredients</h3>
             {recipe
