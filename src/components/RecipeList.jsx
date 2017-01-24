@@ -67,6 +67,7 @@ class RecipeList extends React.Component {
             {recipe
               .ingredients
               .map((ingredient, idx) => {
+                //console.log(recipe);
                 return <li className="list-group-item" key={idx}>{ingredient}</li>
               })}
             <br/>
