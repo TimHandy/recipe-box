@@ -1,14 +1,11 @@
 'use strict'
 
 import React from 'react'
-import {Button, Popover, Modal, Tooltip, OverlayTrigger} from 'react-bootstrap';
+//import {Button, Popover, Modal, Tooltip, OverlayTrigger} from 'react-bootstrap';
 
 class AddRecipe extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      showModal: false
-    }
   }
 
   handleSubmit = () => {
@@ -17,26 +14,8 @@ class AddRecipe extends React.Component {
     this.close()
   }
 
-  close = () => {
-    this.setState({showModal: false});
-  }
-
-  open = () => {
-    this.setState({showModal: true});
-  }
-
   render() {
-    const popover = (
-      <Popover id="modal-popover" title="popover">
-        very popover. such engagement
-      </Popover>
-    );
-    const tooltip = (
-      <Tooltip id="modal-tooltip">
-        wow.
-      </Tooltip>
-    );
-
+   
     return (
       <div>
         <Modal show={this.state.showModal} onHide={this.close}>

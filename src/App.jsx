@@ -3,9 +3,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './css/styles.scss'
-import AddRecipe from 'AddRecipe'
-import RecipeList from 'RecipeList'
-import {Button, Popover, Modal, Tooltip, OverlayTrigger} from 'react-bootstrap';
+import RecipeList from './components/RecipeList'
+//import {Button, Popover, Modal, Tooltip, OverlayTrigger} from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -41,9 +40,8 @@ class App extends React.Component {
     //console.log('saved to localStorage')
     // TODO: add error handling, like pass back a return val and throw an error if unable to save
   }
-  // counter = () => {
-  //     let vl = 0
-  //     return val+1}
+
+
   submitRecipe = () => {
     const name = this.state.name
     const ingredientsAry = this.state.ingredients.split(',')
@@ -116,14 +114,16 @@ class App extends React.Component {
   render() {
 
     return (
+      
       <div style={{
         width: '50%',
         margin: '0 auto'
       }}>
-        <br/>
-        <RecipeList recipe={this.state.store} deleteRecipe={this.deleteRecipe} handleChange={this.handleChange} submitRecipe={this.submitRecipe} editRecipe={this.editRecipe}/>
-        <AddRecipe handleChange={this.handleChange} recipe={this.state.store} submitRecipe={this.submitRecipe}/>
-		<button className='btn btn-primary' onClick={this.resetTestData}>Reset Test Data</button>
+       {}
+      <RecipeList recipes={this.state.store} deleteRecipe={this.deleteRecipe} />
+      <button onClick={this.resetTestData}>Add Recipe</button>
+      <button onClick={this.resetTestData}>Reset Test Data</button>
+
       </div>
     )
   }
