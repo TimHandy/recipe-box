@@ -60,7 +60,7 @@ class RecipeList extends React.Component {
         return (
           <Panel
             collapsible
-            eventKey={idx}
+            eventKey={Symbol(recipe)}
             key={idx}
             header={recipe.name}>
             <h3 className="text-center">Ingredients</h3>
