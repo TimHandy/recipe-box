@@ -29,7 +29,8 @@ class RecipeList extends React.Component {
    
     const recipes = this.props.recipes.map((recipe, idx) => {
       return (
-        <Recipe key={idx} idx={idx} name={recipe.name} ingredients={recipe.ingredients} deleteRecipe={this.props.deleteRecipe} />
+        // key below assumes that recipe.name + recipe.ingredients[0] will always be unique.
+        <Recipe key={recipe.name + recipe.ingredients[0]} idx={idx} name={recipe.name} ingredients={recipe.ingredients} deleteRecipe={this.handleDelete} />
       )
     })
    
