@@ -1,61 +1,28 @@
-# React Camper Leaderboard
+# React Recipe Box
 
 A Free Code Camp assignment.
 
 ## Objective
 
-Build a CodePen.io app that is functionally similar to [this](https://codepen.io/FreeCodeCamp/full/eZGMjp/).
-
-Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
-
-**User Story**: I can see a table of the Free Code Camp campers who've earned the most brownie points in the past 30 days.
-
-**User Story**: I can see how many brownie points they've earned in the past 30 days, and how many they've earned total.
-
-**User Story**: I can toggle between sorting the list by how many brownie points they've earned in the past 30 days and by how many brownie points they've earned total.
-
-Hint: To get the top 100 campers for the last 30 days: https://fcctop100.herokuapp.com/api/fccusers/top/recent.
-
-Hint: To get the top 100 campers of all time: https://fcctop100.herokuapp.com/api/fccusers/top/alltime.
-
-
 ## Completed App
 
 [Github Pages app](https://)
 
-
 ## Notable learning/features
 
-The HTML formatted markup updates instantly without a full page refresh upon changing the text. 
+use Symbol(thinghere) to generate unique indexes for use in keys.
 
-I used an NPM module called Marked. This can be utilised via CDN and link tag in the html or installed via NPM. I used the CDN version here.
+Think more about the layout of the app before diving in; split out components into subcomponents more. Plan a layout on paper.
 
-Used React for the first time.
+Making a test data reset button saves a lot of time!
 
-Props and State utilised
+React-Bootstrap adds complexity.
 
-app.js stores the state for the whole app
+Created a git branch to test a rebuild for troubleshooting.
 
-Use of React's onChange and creating a handleChange function to update the state.
-
-Passing a reference to handleChange down to a child component so that it can update the state
-
-Another child component gets the updated state handed back down to it via props.
-
-Stateless Functional Components can have a shorter syntax style.
-
-Sass used. Media query for small screens
-
-Deployed to the /docs dir to allow deployment to Github Pages
-
+Used a ternary to selectively render some text if a 
 
 ## Notes for next time
-
-Changed to use webpack-dev-server
-make index.html stored in in app dir, not the src dir. The html file should be dynamically generated on running webpack.
-
-Use webpack-dev-server... creating webpack files every time is too slow
-
 
 ## Dev
 

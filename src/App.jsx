@@ -110,6 +110,7 @@ class App extends React.Component {
   handleChange = (event) => {
     const newState = {}; 
     newState[event.target.id] = event.target.value; 
+    //console.log(event.target.id)
     this.setState(newState);
   }
 

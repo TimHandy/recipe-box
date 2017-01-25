@@ -34,15 +34,16 @@ class RecipeList extends React.Component {
   }
 
   close = () => {
-    this.setState({showModal: false});
+    this.setState({
+      showModal: false,
+      editIdx: 0  
+    });
   }
 
   open = (idx) => {
     this.setState({
       showModal: true, 
-      editIdx: idx, 
-      name: this.props.recipe[idx].name,
-      ingredients: this.props.recipe[idx].ingredients
+      editIdx: idx 
     })
   }
 
@@ -63,7 +64,7 @@ class RecipeList extends React.Component {
         return (
           <Panel
             collapsible
-            eventKey={Symbol(recipe)}
+            eventKey={Symbol(recipe)}  // symbol used... can be anything... symbols are guaranteed to be unique.
             key={idx}
             header={recipe.name}>
             <h3 className="text-center">Ingredients</h3>
@@ -75,7 +76,7 @@ class RecipeList extends React.Component {
               })}
             <br/>
             <button className='btn btn-primary' onClick={() => this.open(idx)}>Edit Recipe</button>
-            <button className='btn btn-danger' onClick={() => this.handleDelete(idx)}>Delete Recipe</button>
+            <button className='btn btn-danger' onClick={() => {this.handleDelete(idx), this.close}}>Delete Recipe</button>
           </Panel>
         )
       })
@@ -103,9 +104,7 @@ class RecipeList extends React.Component {
 
     return (
       <div>
-        <h3>{Object
-            .keys(this.props.recipe)
-            .length === 0 && "Please add a recipe."}</h3>
+        <h3>{Object.keys(this.props.recipe).length === 0 && "Please add a recipe."}</h3>
         <PanelGroup accordion>
           {this.list()}
         </PanelGroup>
@@ -120,7 +119,7 @@ class RecipeList extends React.Component {
                 id='ingredients'
                 defaultValue={rVal[1]}
                 onChange={this.props.handleChange}/><br/>
-              <button className='btn btn-primary' onClick={() => this.handleEdit()}>Apply Edit</button>
+              <button className='btn btn-primary' onClick={() => {this.props.editRecipe(this.state.editIdx)}}>Apply Edit</button>
             </div>
           </Modal.Body>
           <Modal.Footer>
