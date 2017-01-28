@@ -39,7 +39,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ // npm i -D html-webpack-plugin. Enables specifying location of index.html file... so can put in src and don't require the build dir for development, i.e. don't have to run webpack.
       template: path.join(__dirname, 'src', 'index.html'),
-      inject: false   // this is required, otherwise the code gets injected twice
+      inject: false   // this is required, otherwise the code gets injected twice - bad times!
     })
   ]
 }
