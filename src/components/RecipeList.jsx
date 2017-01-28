@@ -104,6 +104,7 @@ class RecipeList extends React.Component {
 
     return (
       <div>
+        <h2>My Recipes</h2>
         <h3>{Object.keys(this.props.recipe).length === 0 && "Please add a recipe."}</h3>
         <PanelGroup accordion>
           {this.list()}
