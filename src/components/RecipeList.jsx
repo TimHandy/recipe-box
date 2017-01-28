@@ -41,11 +41,11 @@ class RecipeList extends React.Component {
   }
 
   open = (idx) => {
-    this.setState({
-      showModal: true, 
-      editIdx: idx 
-    })
-  }
+    this.setState({showModal: true, editIdx: idx })
+    const name = this.props.recipe[idx].name
+    const ingredients = this.props.recipe[idx].ingredients
+    this.props.updateNameAndIngredients(name, ingredients)
+    }
 
   store = (name, ingredients) => {
     this.setState({name: name, ingredients: ingredients})
@@ -75,8 +75,8 @@ class RecipeList extends React.Component {
                 return <li className="list-group-item" key={idx}>{ingredient}</li>
               })}
             <br/>
-            <button className='btn btn-primary' onClick={() => this.open(idx)}>Edit Recipe</button>
-            <button className='btn btn-danger' onClick={() => {this.handleDelete(idx), this.close}}>Delete Recipe</button>
+            <button className='btn btn-primary' onClick={() => this.open(idx) }>Edit Recipe</button>
+            <button className='btn btn-danger' onClick={() => this.handleDelete(idx) }>Delete Recipe</button>
           </Panel>
         )
       })
@@ -119,7 +119,7 @@ class RecipeList extends React.Component {
                 id='ingredients'
                 defaultValue={rVal[1]}
                 onChange={this.props.handleChange}/><br/>
-              <button className='btn btn-primary' onClick={() => {this.props.editRecipe(this.state.editIdx)}}>Apply Edit</button>
+              <button className='btn btn-primary' onClick={() => {this.props.editRecipe(this.state.editIdx); this.close()}}>Apply Edit</button>
             </div>
           </Modal.Body>
           <Modal.Footer>

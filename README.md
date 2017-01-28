@@ -24,6 +24,8 @@ Used a ternary to selectively render some text if a
 
 ## Notes for next time
 
+When using Boostrap modals and such,
+
 ## Dev
 
 See package.json for run commands.

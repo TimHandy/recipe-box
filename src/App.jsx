@@ -114,6 +114,14 @@ class App extends React.Component {
     this.setState(newState);
   }
 
+  updateNameAndIngredients = (name, ingredients) => {
+        //console.log(ingredients)
+        this.setState({
+            name,
+            ingredients: ingredients.join(',')
+        })
+    }
+
   render() {
 
     return (
@@ -122,7 +130,7 @@ class App extends React.Component {
         margin: '0 auto'
       }}>
         <br/>
-        <RecipeList recipe={this.state.store} deleteRecipe={this.deleteRecipe} handleChange={this.handleChange} submitRecipe={this.submitRecipe} editRecipe={this.editRecipe}/>
+        <RecipeList recipe={this.state.store} deleteRecipe={this.deleteRecipe} handleChange={this.handleChange} submitRecipe={this.submitRecipe} editRecipe={this.editRecipe} updateNameAndIngredients={this.updateNameAndIngredients}/>
         <AddRecipe handleChange={this.handleChange} recipe={this.state.store} submitRecipe={this.submitRecipe}/>
 		<button className='btn btn-primary' onClick={this.resetTestData}>Reset Test Data</button>
       </div>
